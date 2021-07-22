@@ -1,19 +1,16 @@
 <template>
-  <div class="job-card">
-    <div class="job-card__title">
-      <h2>{{ title }}</h2>
-    </div>
-    <div class="job-card__time">
-      <h3>{{ time }}</h3>
-    </div>
-    <div class="job-card__logo">
+  <div class="project-card">
+    <div class="project-card__logo">
       <img :src="require(`@/assets/${logoURL}`)" :alt="title" />
     </div>
-    <div class="job-card__pos">
-      <h3>{{ pos }}</h3>
+    <div class="project-card__title">
+      <h2>{{ title }}</h2>
     </div>
-    <div class="job-card__info">
-      <slot>Just worked :)</slot>
+    <div class="project-card__info">
+      <slot>Very interesting project :)</slot>
+    </div>
+    <div class="project-card__link">
+      Read more: <a :href="link">{{ link }}</a>
     </div>
   </div>
 </template>
@@ -24,28 +21,25 @@ import { Options, Vue } from "vue-class-component";
 @Options({
   props: {
     title: String,
-    time: String,
-    pos: String,
     logoURL: String,
+    link: String,
   },
 })
-export default class CareerCard extends Vue {
+export default class ProjectCard extends Vue {
   title!: string;
-  time!: string;
-  pos!: string;
   logoURL!: string;
+  link!: string;
 }
 </script>
 
 <style lang="scss" scoped>
-.job-card {
+.project-card {
   display: grid;
   grid-template-areas:
     "title"
-    "time"
     "logo"
-    "pos"
-    "info";
+    "info"
+    "link";
   border-bottom: 2px solid black;
   padding-bottom: 3rem;
   margin-bottom: 3rem;
@@ -53,48 +47,43 @@ export default class CareerCard extends Vue {
   align-items: center;
   justify-items: center;
   text-align: center;
-  width: 100%;
 }
 
-.job-card__title {
+.project-card__title {
   grid-area: title;
 }
 
-.job-card__time {
-  grid-area: time;
+.project-card__link {
+  grid-area: link;
 }
 
-.job-card__logo {
+.project-card__logo {
   grid-area: logo;
   img {
     width: 13rem;
   }
 }
 
-.job-card__pos {
-  grid-area: pos;
-}
-
-.job-card__info {
+.project-card__info {
   grid-area: info;
   text-align: center;
   line-height: 1.5;
 }
 
 @media (min-width: 40rem) {
-  .job-card {
+  .project-card {
     text-align: left;
     grid-template-columns: 1fr 2fr;
     grid-template-areas:
-      "title pos"
-      "time info"
-      "logo info";
+      "logo title"
+      "logo info"
+      "logo link";
     width: 50%;
     column-gap: 2rem;
     justify-items: left;
   }
 
-  .job-card__info {
+  .project-card__info {
     text-align: left;
   }
 }

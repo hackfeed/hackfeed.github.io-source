@@ -5,7 +5,7 @@
     </div>
     <career-card
       title="BMSTU"
-      time="June, 2020 - October, 2022"
+      time="June, 2020 - October, 2020"
       logoURL="bmstu.png"
       pos="Backend developer"
       ><p>
