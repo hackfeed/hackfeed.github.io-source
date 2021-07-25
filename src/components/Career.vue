@@ -73,4 +73,12 @@ export default class Career extends Vue {}
   margin: 0 1rem;
   margin-bottom: 5rem;
 }
+
+@media (min-width: 40rem) {
+  .main-career {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+}
 </style>

@@ -89,7 +89,6 @@ export default class CareerCard extends Vue {
       "title pos"
       "time info"
       "logo info";
-    width: 50%;
     column-gap: 2rem;
     justify-items: left;
   }
