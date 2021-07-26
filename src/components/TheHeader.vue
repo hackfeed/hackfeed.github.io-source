@@ -203,7 +203,7 @@ $full-size: 100%;
   left: 0;
   background: white;
   width: 80%;
-  height: 100vh;
+  height: 100%;
   border-right: 2px solid black;
 }
 
