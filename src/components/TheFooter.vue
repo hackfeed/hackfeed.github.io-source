@@ -36,7 +36,7 @@ export default class TheFooter extends Vue {}
 .main-footer__link {
   margin: 0.5rem 0;
   a {
-    color: black;
+    color: grey;
     text-decoration: none;
     transition: color 0.3s ease-out;
     &:hover,

@@ -1,9 +1,11 @@
 <template>
   <the-header></the-header>
   <main>
+    <the-backdrop id="backdrop"></the-backdrop>
     <about-me id="about-me"></about-me>
-    <career id="career"></career>
+    <career id="career" ref="career"></career>
     <projects id="projects"></projects>
+    <contacts id="contacts"></contacts>
   </main>
   <the-footer></the-footer>
 </template>
@@ -12,11 +14,21 @@
 import { Options, Vue } from "vue-class-component";
 import TheHeader from "@/components/TheHeader.vue";
 import TheFooter from "@/components/TheFooter.vue";
+import TheBackdrop from "@/components/TheBackdrop.vue";
 import AboutMe from "@/components/AboutMe.vue";
 import Career from "@/components/Career.vue";
 import Projects from "@/components/Projects.vue";
+import Contacts from "@/components/Contacts.vue";
 @Options({
-  components: { TheHeader, TheFooter, AboutMe, Career, Projects },
+  components: {
+    TheHeader,
+    TheFooter,
+    TheBackdrop,
+    AboutMe,
+    Career,
+    Projects,
+    Contacts,
+  },
 })
 export default class App extends Vue {}
 </script>

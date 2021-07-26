@@ -19,8 +19,8 @@
         - Swagger (API documentation); <br />
         - Postgres (main DB). <br /><br />
 
-        Unit tests development and development of business-units for applicants personal account
-        during BMSTU entrance at 2020.
+        Unit tests development and development of business-units for applicants
+        personal account during BMSTU entrance at 2020.
       </p></career-card
     >
     <career-card
@@ -29,7 +29,8 @@
       logoURL="mailru.png"
       pos="Highload systems developer"
       ><p>
-        Enterprise development at Architecture & Presale department at B2B Tarantool.<br /><br />
+        Enterprise development at Architecture & Presale department at B2B
+        Tarantool.<br /><br />
 
         Tech stack: <br />
         - Go, Python (internal scripts); <br />

@@ -10,8 +10,13 @@
         link="https://github.com/hackfeed/xk6-tarantool"
         ><p>A k6 load testing utility extension for Tarantool</p></project-card
       >
-      <project-card id="project2" title="mrratality" link="https://github.com/hackfeed/mrratality"
-        ><p>MRR analytics system for SaaS-apps written in Go and Vue</p></project-card
+      <project-card
+        id="project2"
+        title="mrratality"
+        link="https://github.com/hackfeed/mrratality"
+        ><p>
+          MRR analytics system for SaaS-apps written in Go and Vue
+        </p></project-card
       >
       <project-card
         id="project3"
@@ -23,7 +28,9 @@
         id="project4"
         title="hackfeed.github.io-source"
         link="https://github.com/hackfeed/hackfeed.github.io-source"
-        ><p>Source code of webpage you are visiting right now :)</p></project-card
+        ><p>
+          Source code of webpage you are visiting right now :)
+        </p></project-card
       >
     </div>
   </div>

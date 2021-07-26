@@ -1,30 +1,98 @@
 <template>
   <header class="main-header">
     <div>
-      <button class="toggle-button">
+      <button class="toggle-button" @click="openSidebar">
         <span class="toggle-button__bar"></span>
         <span class="toggle-button__bar"></span>
         <span class="toggle-button__bar"></span>
       </button>
-      <a href="#" class="main-header__logo"
+      <a href="/" class="main-header__logo"
         ><img src="@/assets/logo.png" alt="hackfeed's Webpage"
       /></a>
     </div>
     <nav class="main-nav">
       <ul class="main-nav__items">
-        <li class="main-nav__item"><a href="#about-me">About me</a></li>
-        <li class="main-nav__item"><a href="#career">Career</a></li>
-        <li class="main-nav__item"><a href="#">Projects</a></li>
-        <li class="main-nav__item"><a href="#">Contacts</a></li>
+        <li class="main-nav__item">
+          <a
+            v-scroll-to="{
+              el: '#about-me',
+              offset: -48,
+            }"
+            >About me</a
+          >
+        </li>
+        <li class="main-nav__item">
+          <a
+            v-scroll-to="{
+              el: '#career',
+              offset: -48,
+            }"
+            >Career</a
+          >
+        </li>
+        <li class="main-nav__item">
+          <a
+            v-scroll-to="{
+              el: '#projects',
+              offset: -48,
+            }"
+            >Projects</a
+          >
+        </li>
+        <li class="main-nav__item">
+          <a
+            v-scroll-to="{
+              el: '#contacts',
+              offset: -48,
+            }"
+            >Contacts</a
+          >
+        </li>
       </ul>
     </nav>
   </header>
   <nav class="mobile-nav">
     <ul class="mobile-nav__items">
-      <li class="mobile-nav__item"><a href="#">About me</a></li>
-      <li class="mobile-nav__item"><a href="#">Career</a></li>
-      <li class="mobile-nav__item"><a href="#">Projects</a></li>
-      <li class="mobile-nav__item"><a href="#">Contacts</a></li>
+      <li class="mobile-nav__item">
+        <a
+          v-scroll-to="{
+            el: '#about-me',
+            offset: -48,
+          }"
+          @click="closeSidebar"
+          >About me</a
+        >
+      </li>
+      <li class="mobile-nav__item">
+        <a
+          v-scroll-to="{
+            el: '#career',
+            offset: -48,
+          }"
+          @click="closeSidebar"
+          >Career</a
+        >
+      </li>
+      <li class="mobile-nav__item">
+        <a
+          v-scroll-to="{
+            el: '#projects',
+            offset: -48,
+          }"
+          @click="closeSidebar"
+          >Projects</a
+        >
+      </li>
+      <li class="mobile-nav__item">
+        <a
+          v-scroll-to="{
+            el: '#contacts',
+            offset: -48,
+          }"
+          @click="closeSidebar"
+          >Contacts</a
+        >
+      </li>
     </ul>
   </nav>
 </template>
@@ -32,7 +100,20 @@
 <script lang="ts">
 import { Vue } from "vue-class-component";
 
-export default class TheHeader extends Vue {}
+export default class TheHeader extends Vue {
+  openSidebar() {
+    const sidebar = document.querySelector(".mobile-nav") as HTMLDivElement;
+    const backdrop = document.querySelector("#backdrop") as HTMLDivElement;
+    backdrop.style.display = "block";
+    sidebar.classList.add("open");
+  }
+  closeSidebar() {
+    const sidebar = document.querySelector(".mobile-nav") as HTMLDivElement;
+    const backdrop = document.querySelector("#backdrop") as HTMLDivElement;
+    backdrop.style.display = "none";
+    sidebar.classList.remove("open");
+  }
+}
 </script>
 
 <style lang="scss" scoped>
@@ -107,6 +188,7 @@ $full-size: 100%;
     transition: 0.2s;
     &:hover,
     &:active {
+      cursor: pointer;
       color: lightcoral;
     }
   }
@@ -122,6 +204,7 @@ $full-size: 100%;
   background: white;
   width: 80%;
   height: 100vh;
+  border-right: 2px solid black;
 }
 
 .mobile-nav__items {
@@ -142,10 +225,18 @@ $full-size: 100%;
   a {
     font-size: 1.5rem;
     text-decoration: none;
-    color: #0e4f1f;
+    color: black;
     font-weight: bold;
     padding: 0.2rem 0;
+    &:active {
+      color: lightcoral;
+    }
   }
+}
+
+.open {
+  display: block !important;
+  transform: translateY(0) !important;
 }
 
 @media (min-width: 40rem) {
