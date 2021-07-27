@@ -24,9 +24,16 @@ export default class CareerCard extends Vue {
 <style lang="scss" scoped>
 .contact-card img {
   background-color: white;
-  width: 100px;
-  height: 100px;
-  border-radius: 50px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
   border: 2px solid white;
+}
+
+@media (min-width: 40rem) {
+  .contact-card img {
+    width: 100px;
+    height: 100px;
+  }
 }
 </style>

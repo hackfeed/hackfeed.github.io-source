@@ -64,5 +64,6 @@ body {
 
 main {
   grid-area: main;
+  width: 100vw;
 }
 </style>

@@ -1,13 +1,12 @@
 <template>
   <div class="project-card">
     <div class="project-card__title">
-      <h2>{{ title }}</h2>
+      <a :href="link">
+        <h2>{{ title }}</h2>
+      </a>
     </div>
     <div class="project-card__info">
       <slot>Very interesting project :)</slot>
-    </div>
-    <div class="project-card__link">
-      Read more: <a :href="link">{{ link }}</a>
     </div>
   </div>
 </template>
@@ -29,22 +28,14 @@ export default class ProjectCard extends Vue {
 
 <style lang="scss" scoped>
 .project-card {
-  display: grid;
-  grid-template-areas:
-    "title"
-    "info"
-    "link";
+  display: flex;
+  flex-direction: column;
+  text-align: center;
   border: 2px solid black;
   padding: 3rem;
-  justify-content: center;
-  align-items: center;
-  justify-items: center;
-  text-align: center;
-  width: 100%;
 }
 
-.project-card__link {
-  grid-area: link;
+.project-card__title {
   a {
     text-decoration: none;
     color: grey;
@@ -57,20 +48,9 @@ export default class ProjectCard extends Vue {
 }
 
 .project-card__info {
-  grid-area: info;
-  text-align: center;
   line-height: 1.5;
 }
 
 @media (min-width: 40rem) {
-  .project-card {
-    text-align: left;
-    justify-content: left;
-    justify-items: left;
-  }
-
-  .project-card__info {
-    text-align: left;
-  }
 }
 </style>

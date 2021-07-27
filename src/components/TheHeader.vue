@@ -117,7 +117,7 @@ export default class TheHeader extends Vue {
 </script>
 
 <style lang="scss" scoped>
-$full-size: 100%;
+$full-size: 100vw;
 
 .main-header {
   width: $full-size;

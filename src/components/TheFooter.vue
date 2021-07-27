@@ -22,6 +22,7 @@ export default class TheFooter extends Vue {}
   border-top: 2px solid black;
   padding: 0.5rem 1rem;
   grid-area: footer;
+  width: 100vw;
 }
 
 .main-footer__links {

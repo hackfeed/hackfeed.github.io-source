@@ -8,18 +8,9 @@
         imgURL="hh.png"
         link="https://hh.ru/resume/d1931d07ff05aa99b80039ed1f515a52507774"
       ></contact-card>
-      <contact-card
-        imgURL="email.png"
-        link="mailto:hackfeed@yandex.ru"
-      ></contact-card>
-      <contact-card
-        imgURL="github.png"
-        link="https://github.com/hackfeed"
-      ></contact-card>
-      <contact-card
-        imgURL="telegram.png"
-        link="https://t.me/hackfeed"
-      ></contact-card>
+      <contact-card imgURL="email.png" link="mailto:hackfeed@yandex.ru"></contact-card>
+      <contact-card imgURL="github.png" link="https://github.com/hackfeed"></contact-card>
+      <contact-card imgURL="telegram.png" link="https://t.me/hackfeed"></contact-card>
     </div>
   </div>
 </template>
@@ -35,9 +26,9 @@ export default class Career extends Vue {}
 <style lang="scss" scoped>
 .main-contacts {
   display: flex;
+  width: 100vw;
   flex-direction: column;
   align-items: center;
-  margin: 0 1rem;
   margin-bottom: 5rem;
 }
 
@@ -58,7 +49,7 @@ export default class Career extends Vue {}
   .main-contacts {
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: 50vw;
   }
 }
 </style>

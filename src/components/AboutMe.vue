@@ -26,11 +26,11 @@ export default class AboutMe extends Vue {}
 <style lang="scss" scoped>
 .main-aboutme {
   display: grid;
+  width: 100%;
   grid-template-areas:
     "title"
     "photo"
     "bio";
-  margin: 0 1rem;
   margin-bottom: 5rem;
   justify-content: center;
   align-items: center;
